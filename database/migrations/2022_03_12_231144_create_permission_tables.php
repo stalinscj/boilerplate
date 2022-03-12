@@ -29,6 +29,9 @@ class CreatePermissionTables extends Migration
             $table->bigIncrements('id');
             $table->string('name');       // For MySQL 8.0 use string('name', 125);
             $table->string('guard_name'); // For MySQL 8.0 use string('guard_name', 125);
+            $table->string('route_name')->unique();
+            $table->unsignedTinyInteger('level');
+            $table->string('group');
             $table->timestamps();
 
             $table->unique(['name', 'guard_name']);
@@ -42,6 +45,7 @@ class CreatePermissionTables extends Migration
             }
             $table->string('name');       // For MySQL 8.0 use string('name', 125);
             $table->string('guard_name'); // For MySQL 8.0 use string('guard_name', 125);
+            $table->unsignedTinyInteger('level');
             $table->timestamps();
             if ($teams || config('permission.testing')) {
                 $table->unique([$columnNames['team_foreign_key'], 'name', 'guard_name']);
