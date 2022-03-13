@@ -8,4 +8,6 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 class Role extends SpatieRole
 {
     use HasFactory;
+
+    public const LEVEL_SUPER_ADMIN = 0;
 }
