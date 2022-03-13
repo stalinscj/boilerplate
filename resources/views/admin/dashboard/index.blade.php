@@ -1,13 +1,11 @@
-<!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+@extends('admin.layouts.app')
 
-        <title>{{ config('app.name') }}</title>
+@section('title', 'Dashboard')
 
-    </head>
-    <body>
-        <h1>Dashboard</h1>
-    </body>
-</html>
+@section('title-header', 'Dashboard')
+
+@section('content')
+<div class="container-fluid">
+
+</div>
+@endsection
