@@ -1,1 +1,9 @@
-[]
+[
+	{
+		"group": "Panel de Administración",
+		"level": 1,
+		"labels": [
+			{ "name": "Dashboard", "route_name": "admin.dashboard" }
+		]
+	}
+]
