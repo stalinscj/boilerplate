@@ -70,6 +70,9 @@
   <!-- Bootstrap 4 -->
   <script src="{{ asset('vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
 
+  <!-- Sweetalert -->
+  @include('sweetalert::alert')
+
   {{-- Plugins Scripts --}}
   @stack('plugins-js')
 
