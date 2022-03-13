@@ -158,4 +158,13 @@ return [
 
         'store' => 'default',
     ],
+
+    /*
+     * Super Admin info
+     */
+    'super_admin' => [
+        'name'     => env('SUPER_ADMIN_NAME', 'SUPER_ADMIN'),
+        'email'    => env('SUPER_ADMIN_EMAIL'),
+        'password' => env('SUPER_ADMIN_PASSWORD'),
+    ],
 ];
