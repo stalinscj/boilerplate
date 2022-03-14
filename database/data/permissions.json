@@ -7,6 +7,20 @@
 		]
 	},
 	{
+		"group": "Permisos",
+		"level": 0,
+		"labels": [
+			{ "name": "Listar Permisos",     "route_name": "admin.permissions.index" },
+			{ "name": "Editar Permisos",     "route_name": "admin.permissions.edit" },
+			{ "name": "Actualizar Permisos", "route_name": "admin.permissions.update" },
+			{ "name": "Mostrar Permisos",    "route_name": "admin.permissions.show" },
+			{ "name": "Crear Permisos",      "route_name": "admin.permissions.create" },
+			{ "name": "Almacenar Permisos",  "route_name": "admin.permissions.store" },
+			{ "name": "Eliminar Permisos",   "route_name": "admin.permissions.destroy" },
+			{ "name": "Limpiar Permisos",    "route_name": "admin.permissions.clean" }
+		]
+	},
+	{
 		"group": "Roles",
 		"level": 1,
 		"labels": [

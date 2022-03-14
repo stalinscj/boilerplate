@@ -26,13 +26,28 @@
       <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
 
         {{-- Security --}}
-        @canany(['Listar Roles'], Auth::user())
-          <li class="nav-item has-treeview {{ Request::is('admin/roles*') ? 'menu-open' : ''}}">
+        @canany(['Listar Permisos', 'Listar Roles'], Auth::user())
+          <li class="nav-item has-treeview {{ Request::is('admin/roles*', 'admin/permissions*') ? 'menu-open' : '' }}">
 
             <a href="#" class="nav-link">
               <i class="nav-icon fa fa-lock"></i>
               <p>Seguridad <i class="fa fa-angle-left right"></i></p>
             </a>
+
+            @can('Listar Permisos', Auth::user())
+              <ul class="nav nav-treeview">
+                <li class="nav-item">
+                  <a href="{{ route('admin.permissions.index') }}"
+                    class="nav-link {{ Request::is('admin/permissions*') ? 'active' : '' }}">
+                    <i class="nav-icon fas fa-key"></i>
+                    <p>Permisos</p>
+                    @if ($total = App\Models\Permission::getTotalPermissionsNotifications())
+                      <span class="badge badge-danger right">{{ $total }}</span>
+                    @endif
+                  </a>
+                </li>
+              </ul>
+            @endcan
 
             @can('Listar Roles', Auth::user())
               <ul class="nav nav-treeview">
