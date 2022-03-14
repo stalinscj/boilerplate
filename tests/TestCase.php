@@ -41,4 +41,24 @@ abstract class TestCase extends BaseTestCase
 
         return $user;
     }
+
+    /**
+     * Assert that the session has the give error key value.
+     *
+     * @param string $key
+     * @param string $value
+     * @param int    $index
+     *
+     * @return $this
+     */
+    protected function assertSessionHasErrorKeyValue($key, $value, $index = 0)
+    {
+        $errors = session('errors');
+
+        $error = optional($errors)->get($key)[$index] ?? '';
+
+        $this->assertEquals($value, $error, "Session missing error: '$key' with '$value' at index $index");
+
+        return $this;
+    }
 }
