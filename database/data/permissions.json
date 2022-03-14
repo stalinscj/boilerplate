@@ -5,5 +5,18 @@
 		"labels": [
 			{ "name": "Dashboard", "route_name": "admin.dashboard" }
 		]
+	},
+	{
+		"group": "Roles",
+		"level": 1,
+		"labels": [
+			{ "name": "Listar Roles",     "route_name": "admin.roles.index" },
+			{ "name": "Editar Roles",     "route_name": "admin.roles.edit" },
+			{ "name": "Actualizar Roles", "route_name": "admin.roles.update" },
+			{ "name": "Mostrar Roles",    "route_name": "admin.roles.show" },
+			{ "name": "Crear Roles",      "route_name": "admin.roles.create" },
+			{ "name": "Almacenar Roles",  "route_name": "admin.roles.store" },
+			{ "name": "Eliminar Roles",   "route_name": "admin.roles.destroy" }
+		]
 	}
 ]

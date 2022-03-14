@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\Admin\RoleController;
 use App\Http\Controllers\Admin\DashboardController;
 
 /*
@@ -21,6 +22,8 @@ use App\Http\Controllers\Admin\DashboardController;
  ***********************************************************************************************************************/
 Route::group(['middleware' => ['auth', 'access'], 'prefix' => 'admin', 'as' => 'admin.'], function () {
     Route::get('/', [DashboardController::class, 'index'])->name('dashboard');
+
+    Route::resource('roles', RoleController::class);
 });
 
 
