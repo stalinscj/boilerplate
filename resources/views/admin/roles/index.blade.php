@@ -21,6 +21,7 @@
                 <tr>
                     <th >Nombre</th>
                     <th >Nivel</th>
+                    <th data-sortable="false">Permisos</th>
                     <th data-sortable="false">Acciones</th>
                 </tr>
             </thead>
@@ -29,6 +30,11 @@
                     <tr>
                         <td><a href="{{ route('admin.roles.show', $role) }}">{{ $role->name }}</a></td>
                         <td>{{ $role->level }}</td>
+                        <td>
+                            <a href="{{ route('admin.roles.permissions.create', $role) }}">
+                                Actualizar Permisos ({{ $role->permissions->count() }})
+                            </a>
+                        </td>
                         <td>
                             <a href="{{ route('admin.roles.edit', $role) }}"
                                 class="btn btn-sm btn-primary" title="Editar">

@@ -21,6 +21,14 @@
 		]
 	},
 	{
+		"group": "Permisos de Roles",
+		"level": 1,
+		"labels": [
+			{ "name": "Seleccionar Permisos de Roles", "route_name": "admin.roles.permissions.create" },
+			{ "name": "Almacenar Permisos de Roles",   "route_name": "admin.roles.permissions.store" }
+		]
+	},
+	{
 		"group": "Roles",
 		"level": 1,
 		"labels": [

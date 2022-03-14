@@ -6,6 +6,7 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\Admin\RoleController;
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\PermissionController;
+use App\Http\Controllers\Admin\RolePermissionController;
 
 /*
 |--------------------------------------------------------------------------
@@ -28,6 +29,8 @@ Route::group(['middleware' => ['auth', 'access'], 'prefix' => 'admin', 'as' => '
     Route::delete('permissions', [PermissionController::class, 'clean'])->name('permissions.clean');
 
     Route::resource('roles', RoleController::class);
+
+    Route::resource('roles.permissions', RolePermissionController::class)->only('create', 'store');
 });
 
 
