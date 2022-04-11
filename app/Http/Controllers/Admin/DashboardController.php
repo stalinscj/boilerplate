@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Http\Responses\Admin\DashboardResponse;
 
 class DashboardController extends Controller
 {
@@ -13,6 +14,6 @@ class DashboardController extends Controller
      */
     public function index()
     {
-        return view('admin.dashboard.index');
+        return new DashboardResponse();
     }
 }
