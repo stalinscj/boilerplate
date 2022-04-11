@@ -40,5 +40,19 @@
 			{ "name": "Almacenar Roles",  "route_name": "admin.roles.store" },
 			{ "name": "Eliminar Roles",   "route_name": "admin.roles.destroy" }
 		]
+	},
+	{
+		"group": "Usuarios",
+		"level": 1,
+		"labels": [
+			{ "name": "Listar Usuarios",     "route_name": "admin.users.index" },
+			{ "name": "Editar Usuarios",     "route_name": "admin.users.edit" },
+			{ "name": "Actualizar Usuarios", "route_name": "admin.users.update" },
+			{ "name": "Mostrar Usuarios",    "route_name": "admin.users.show" },
+			{ "name": "Crear Usuarios",      "route_name": "admin.users.create" },
+			{ "name": "Almacenar Usuarios",  "route_name": "admin.users.store" },
+			{ "name": "Eliminar Usuarios",   "route_name": "admin.users.destroy" },
+			{ "name": "Restaurar Usuarios",  "route_name": "admin.users.restore" }
+		]
 	}
 ]

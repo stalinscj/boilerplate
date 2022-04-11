@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\Admin\RoleController;
+use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\PermissionController;
 use App\Http\Controllers\Admin\RolePermissionController;
@@ -31,6 +32,9 @@ Route::group(['middleware' => ['auth', 'access'], 'prefix' => 'admin', 'as' => '
     Route::resource('roles', RoleController::class);
 
     Route::resource('roles.permissions', RolePermissionController::class)->only('create', 'store');
+
+    Route::resource('users', UserController::class);
+    Route::post('users/{user}', [UserController::class, 'restore'])->name('users.restore');
 });
 
 

@@ -25,6 +25,18 @@
     <nav class="mt-2">
       <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
 
+        {{-- Users --}}
+        @can(['Listar Usuarios'], Auth::user())
+          <li class="nav-item">
+            <a href="{{ route('admin.users.index') }}"
+              class="nav-link {{ Request::is('admin/users*') ? 'active' : '' }}">
+              <i class="nav-icon fa fa-users"></i>
+              <p>Usuarios</p>
+            </a>
+          </li>
+        @endcan
+        {{-- ./Users --}}
+
         {{-- Security --}}
         @canany(['Listar Permisos', 'Listar Roles'], Auth::user())
           <li class="nav-item has-treeview {{ Request::is('admin/roles*', 'admin/permissions*') ? 'menu-open' : '' }}">

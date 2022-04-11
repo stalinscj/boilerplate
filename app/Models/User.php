@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Traits\SecureDeletes;
 use Laravel\Sanctum\HasApiTokens;
 use Spatie\Permission\Traits\HasRoles;
 use Illuminate\Notifications\Notifiable;
@@ -11,7 +12,7 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 
 class User extends Authenticatable
 {
-    use HasApiTokens, HasFactory, Notifiable, HasRoles;
+    use HasApiTokens, HasFactory, Notifiable, HasRoles, SecureDeletes;
 
     /**
      * The attributes that are mass assignable.
@@ -42,6 +43,19 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    /**
+     * Set the user's email.
+     *
+     * @param  string  $value
+     * @return \Illuminate\Database\Eloquent\Casts\Attribute
+     */
+    protected function email(): Attribute
+    {
+        return Attribute::make(
+            set: fn ($value) => mb_strtolower($value, 'UTF-8'),
+        );
+    }
 
     /**
      * Get the user's level.
